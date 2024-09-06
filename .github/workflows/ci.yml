@@ -29,7 +29,11 @@ jobs:
         run: |
           chmod +x ./install_and_test.sh
           ./install_and_test.sh
-
+          
+      - name: Print results
+        shell: bash
+        run: cat ./crate_build_test/crate_build_results.md
+          
       - name: Upload results
         uses: actions/upload-artifact@v3
         with:
@@ -54,6 +58,11 @@ jobs:
         shell: pwsh
         run: |
           .\install_and_test.bat
+
+      - name: Print results
+        shell: bash
+        run: cat ./crate_build_test/crate_build_results.md
+          
       - name: Upload results
         uses: actions/upload-artifact@v3
         with:
