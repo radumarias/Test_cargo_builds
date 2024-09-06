@@ -1,0 +1,61 @@
+name: Run script
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: moonrepo/setup-rust@v1
+
+      - name: Install dependencies and build
+        run: |
+          rustup update
+
+      - name: Run script
+        shell: bash
+        run: |
+          chmod +x ./install_and_test.sh
+          ./install_and_test.sh
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: crate-build-results
+          path: ./crate_build_test/crate_build_results.md
+
+  build-and-test_win:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Rust
+        uses: moonrepo/setup-rust@v1
+
+      - name: Install dependencies and build
+        run: |
+          rustup update
+
+      - name: Run bat script
+        shell: pwsh
+        run: |
+          .\install_and_test.bat
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: crate-build-results
+          path: ./crate_build_test/crate_build_results.md
