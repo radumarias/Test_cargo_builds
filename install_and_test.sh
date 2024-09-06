@@ -110,5 +110,3 @@ do
 
 
 done
-
-printf "|\n" >> "crate_build_results.md"
