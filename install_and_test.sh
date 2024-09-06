@@ -8,7 +8,7 @@ cargo new crate_build_test
 cd crate_build_test
 
 # secret_crates=("secrets" "memsecurity" "memsec")
-secret_crates=("secrect")
+secret_crates=("secrecy")
 
 binary_targets=(
 "x86_64-unknown-linux-gnu"
