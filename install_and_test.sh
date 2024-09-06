@@ -7,23 +7,53 @@ rm -rf crate_build_test
 cargo new crate_build_test
 cd crate_build_test
 
-secret_crates=("secrets" "memsecurity" "memsec")
+# secret_crates=("secrets" "memsecurity" "memsec")
+secret_crates=("secrect")
 
 binary_targets=(
-    "x86_64-unknown-linux-gnu" "x86_64-unknown-linux-musl" "aarch64-unknown-linux-gnu"
-    "aarch64-unknown-linux-musl" "armv7-unknown-linux-gnueabihf" "armv7-unknown-linux-musleabihf"
-    "mips-unknown-linux-gnu" "mips64-unknown-linux-gnuabi64" "powerpc-unknown-linux-gnu"
-    "powerpc64le-unknown-linux-gnu" "s390x-unknown-linux-gnu" "x86_64-apple-darwin"
-    "aarch64-apple-darwin" "x86_64-pc-windows-msvc" "x86_64-pc-windows-gnu"
-    "aarch64-pc-windows-msvc" "i686-pc-windows-msvc" "i686-pc-windows-gnu"
-    "aarch64-linux-android" "armv7-linux-androideabi" "armv5te-linux-androideabi"
-    "x86_64-linux-android" "x86-linux-android" "armv7a-linux-androideabi"
-    "thumbv7neon-linux-androideabi" "aarch64-apple-ios" "armv7-apple-ios" "x86_64-apple-ios"
-    "wasm32-unknown-unknown" "wasm32-wasi" "i686-unknown-linux-gnu" "i686-unknown-linux-musl"
-    "x86_64-unknown-freebsd" "x86_64-unknown-netbsd" "x86_64-unknown-openbsd" 
-    "riscv64gc-unknown-linux-gnu" "riscv64imac-unknown-none-elf" "thumbv6m-none-eabi"
-    "thumbv7m-none-eabi" "thumbv7em-none-eabi" "thumbv7em-none-eabihf" "nvptx64-nvidia-cuda"
-    "spirv-unknown-unknown"
+"x86_64-unknown-linux-gnu"
+"x86_64-unknown-linux-musl"
+"aarch64-unknown-linux-gnu"
+"aarch64-unknown-linux-musl"
+"armv7-unknown-linux-gnueabihf"
+"armv7-unknown-linux-musleabihf"
+"mips-unknown-linux-gnu"
+"mips64-unknown-linux-gnuabi64"
+"powerpc-unknown-linux-gnu"
+"powerpc64le-unknown-linux-gnu"
+"s390x-unknown-linux-gnu"
+"x86_64-apple-darwin"
+"aarch64-apple-darwin"
+"x86_64-pc-windows-msvc"
+"x86_64-pc-windows-gnu"
+"aarch64-pc-windows-msvc"
+"i686-pc-windows-msvc"
+"i686-pc-windows-gnu"
+"aarch64-linux-android"
+"armv7-linux-androideabi"
+"armv5te-linux-androideabi"
+"x86_64-linux-android"
+"x86-linux-android"
+"armv7a-linux-androideabi"
+"thumbv7neon-linux-androideabi"
+"aarch64-apple-ios"
+"armv7-apple-ios"
+"x86_64-apple-ios"
+"wasm32-unknown-unknown"
+"wasm32-wasi"
+"i686-unknown-linux-gnu"
+"i686-unknown-linux-musl"
+"x86_64-unknown-freebsd"
+"x86_64-unknown-netbsd"
+"x86_64-unknown-openbsd"
+"riscv64gc-unknown-linux-gnu"
+"riscv64imac-unknown-none-elf"
+"thumbv6m-none-eabi"
+"thumbv7m-none-eabi"
+"thumbv7em-none-eabi"
+"thumbv7em-none-eabihf"
+"nvptx64-nvidia-cuda"
+"spirv-unknown-unknown"
 )
 
 rm -rf "crate_build_results.md"
@@ -77,5 +107,6 @@ do
     sleep 2
 
     printf "|\n" >> "crate_build_results.md"
+
 
 done
